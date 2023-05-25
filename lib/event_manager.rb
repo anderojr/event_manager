@@ -14,7 +14,7 @@ def legislators_by_zipcode(zip)
     legislators = civic_info.representative_info_by_address(
       address: zip,
       levels: 'country',
-      roles: ['legislatorUpperBody', 'legislatorLowerBody']
+      roles: %w[legislatorUpperBody legislatorLowerBody]
     )
     legislators = legislators.officials
     legislator_names = legislators.map(&:name)
